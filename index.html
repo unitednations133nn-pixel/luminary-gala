@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luminary Gala</title>
+
+<!-- CSS Styling (Green) -->
+<style>
+  body {
+    background: linear-gradient(to bottom, #000000, #1a1a1a);
+    color: white;
+    font-family: "Georgia", serif;
+    text-align: center;
+    padding-top: 100px;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 60px;
+    letter-spacing: 4px;
+    color: gold;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    opacity: 0.8;
+    margin-bottom: 50px;
+  }
+
+  #countdown {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    font-size: 16px;
+    opacity: 0.6;
+  }
+</style>
+</head>
+
+<body>
+<!-- HTML Content (Blue) -->
+<h1>LUMINARY GALA</h1>
+<div class="subtitle">
+Waiting for the announcement and update from the officials
+</div>
+
+<div id="countdown"></div>
+
+<footer>
+  &copy; 2026 Luminary Gala. All Rights Reserved.
+</footer>
+
+<!-- JavaScript for Countdown (Orange) -->
+<script>
+  var countDate = new Date("Dec 31, 2026 20:00:00").getTime();
+
+  var x = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = countDate - now;
+
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "The Gala has begun!";
+      return;
+    }
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+      days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+  }, 1000);
+</script>
+</body>
+</html>

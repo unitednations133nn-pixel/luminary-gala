@@ -29,8 +29,6 @@
     opacity: 0.8;
     margin-bottom: 50px;
   }
-
-  #countdown {
     font-size: 48px;
     font-weight: bold;
     color: #ffd700;
@@ -53,35 +51,3 @@
 <div class="subtitle">
 Waiting for the announcement and update from the officials
 </div>
-
-<div id="countdown"></div>
-
-<footer>
-  &copy; 2026 Luminary Gala. All Rights Reserved.
-</footer>
-
-<!-- JavaScript for Countdown (Orange) -->
-<script>
-  var countDate = new Date("Dec 31, 2026 20:00:00").getTime();
-
-  var x = setInterval(function () {
-    var now = new Date().getTime();
-    var distance = countDate - now;
-
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("countdown").innerHTML = "The Gala has begun!";
-      return;
-    }
-
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML =
-      days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-  }, 1000);
-</script>
-</body>
-</html>
